@@ -1,3 +1,22 @@
+:root {
+  color-scheme: light;
+
+  --cream: #f6f0dc;
+  --warm: #f1e2a8;
+  --gold: #d9ba55;
+
+  --green: #6f8b3d;
+  --green-soft: #b9c96a;
+  --green-deep: #456334;
+  --green-dark: #2d4327;
+
+  --brown: #4b3526;
+  --brown-soft: #7a5a3a;
+
+  --ink: #2a241d;
+  --soft: #6b614f;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,7 +28,630 @@ body {
   min-height: 100%;
 }
 
+html {
+  background: var(--cream);
+}
+
 body {
   min-height: 100vh;
   min-height: 100dvh;
+
+  background: var(--cream);
+  color: var(--ink);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure {
+  margin: 0;
+}
+
+
+/* opening */
+
+.opening {
+  min-height: 82vh;
+  min-height: 82dvh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 36px;
+
+  padding:
+    max(50px, env(safe-area-inset-top))
+    max(34px, env(safe-area-inset-right))
+    60px
+    max(34px, env(safe-area-inset-left));
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f8f3df 0%,
+      #f3e9bf 55%,
+      #edd88e 100%
+    );
+}
+
+.opening h1 {
+  margin: 0;
+
+  color: #2f2a21;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(70px, 16vw, 160px);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+}
+
+.place {
+  margin: 20px 0 0;
+
+  color: #6f664f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.opening-line {
+  margin: 0 4% 6px 0;
+
+  color: #4a3d29;
+
+  font-size: clamp(23px, 3.3vw, 34px);
+  font-style: italic;
+}
+
+
+/* first image */
+
+.hero {
+  width: 100%;
+  height: 88vh;
+  height: 88dvh;
+
+  background: #b8c86c;
+}
+
+.hero img {
+  filter:
+    saturate(1.08)
+    contrast(1.03)
+    brightness(0.98);
+}
+
+
+/* shared text */
+
+.words {
+  max-width: 440px;
+}
+
+.words span,
+.last-words span {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: #6e644e;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.words p {
+  margin: 0 0 14px;
+
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.4;
+}
+
+.words .quiet {
+  margin-top: 26px;
+
+  color: var(--soft);
+
+  font-size: 19px;
+}
+
+
+/* standard alternating stops */
+
+.stop {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(34px, 7vw, 95px);
+  align-items: center;
+
+  width: min(1220px, 100%);
+  margin: 0 auto;
+
+  padding:
+    clamp(95px, 13vw, 175px)
+    clamp(22px, 5vw, 64px);
+}
+
+.stop:nth-of-type(even) {
+  grid-template-columns: 1.3fr 0.7fr;
+}
+
+.stop figure {
+  height: clamp(440px, 68vh, 760px);
+}
+
+
+/* road */
+
+.road {
+  background: #f7efcf;
+}
+
+.road figure img {
+  filter:
+    saturate(1.08)
+    contrast(1.03);
+}
+
+
+/* grass */
+
+.grass {
+  width: 100%;
+
+  padding:
+    clamp(90px, 12vw, 150px)
+    clamp(22px, 6vw, 85px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f4eebd 0%,
+      #dbe28b 100%
+    );
+}
+
+.grass figure {
+  width: min(1150px, 100%);
+  height: 74vh;
+  height: 74dvh;
+
+  margin: 0 auto;
+}
+
+.grass figure img {
+  filter:
+    saturate(1.16)
+    contrast(1.04);
+}
+
+.grass .words {
+  width: min(640px, 100%);
+  max-width: none;
+
+  margin: 42px auto 0;
+}
+
+.grass .words span {
+  color: #536632;
+}
+
+.grass .words p:first-of-type {
+  color: #334220;
+}
+
+
+/* sheep */
+
+.sheep {
+  background: #f8f4e4;
+}
+
+.sheep figure img {
+  filter:
+    saturate(1.1)
+    contrast(1.02);
+}
+
+
+/* cows */
+
+.full-photo {
+  position: relative;
+
+  width: 100%;
+  min-height: 96vh;
+  min-height: 96dvh;
+
+  overflow: hidden;
+}
+
+.full-photo figure {
+  position: absolute;
+  inset: 0;
+}
+
+.full-photo .words {
+  position: relative;
+  z-index: 2;
+
+  width: min(530px, calc(100% - 46px));
+
+  margin-left: clamp(24px, 7vw, 110px);
+  padding-top: clamp(90px, 13vw, 160px);
+
+  color: #fff7e6;
+
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+.full-photo .words span {
+  color: rgba(255, 242, 204, 0.84);
+}
+
+.full-photo .words p {
+  font-size: clamp(30px, 4.8vw, 54px);
+}
+
+.cows {
+  background: #6e8243;
+}
+
+.cows::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(66, 49, 28, 0.42) 0%,
+      rgba(66, 49, 28, 0.16) 42%,
+      rgba(66, 49, 28, 0.05) 100%
+    );
+
+  pointer-events: none;
+}
+
+.cows figure img {
+  filter:
+    saturate(1.12)
+    contrast(1.05)
+    brightness(0.96);
+}
+
+
+/* vines */
+
+.vines {
+  grid-template-columns: 1.35fr 0.65fr;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f2e7b6 0%,
+      #f8f3de 100%
+    );
+}
+
+.vines figure {
+  order: 1;
+}
+
+.vines .words {
+  order: 2;
+}
+
+.vines .words span {
+  color: #5b6d2d;
+}
+
+.vines figure img {
+  filter:
+    saturate(1.1)
+    contrast(1.03);
+}
+
+
+/* horses */
+
+.horses {
+  width: 100%;
+
+  padding:
+    clamp(95px, 12vw, 150px)
+    clamp(22px, 6vw, 85px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      #d7df8d 0%,
+      #f4eed4 100%
+    );
+}
+
+.horses .words {
+  width: min(620px, 100%);
+  max-width: none;
+
+  margin: 0 auto 42px;
+}
+
+.horses .words span {
+  color: #4b6031;
+}
+
+.horses figure {
+  width: min(1150px, 100%);
+  height: 72vh;
+  height: 72dvh;
+
+  margin: 0 auto;
+}
+
+.horses figure img {
+  filter:
+    saturate(1.08)
+    contrast(1.03);
+}
+
+
+/* shade */
+
+.trees {
+  background: #304126;
+}
+
+.trees::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(37, 28, 20, 0.45) 0%,
+      rgba(37, 28, 20, 0.18) 44%,
+      rgba(37, 28, 20, 0.08) 100%
+    );
+
+  pointer-events: none;
+}
+
+.trees figure img {
+  filter:
+    saturate(1.08)
+    contrast(1.04)
+    brightness(0.94);
+}
+
+
+/* final section */
+
+.last-drive {
+  display: grid;
+  grid-template-columns: 1.45fr 0.55fr;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #efd88f 0%,
+      #c1ba6f 100%
+    );
+
+  color: #2f281f;
+}
+
+.last-drive figure {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.last-drive figure img {
+  filter:
+    saturate(1.08)
+    contrast(1.03)
+    brightness(0.98);
+}
+
+.last-words {
+  align-self: center;
+
+  padding:
+    60px
+    clamp(28px, 5vw, 74px);
+}
+
+.last-words span {
+  color: #5f573f;
+}
+
+.last-words p {
+  margin: 0 0 18px;
+
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.4;
+}
+
+
+/* ending */
+
+.end {
+  min-height: 74vh;
+  min-height: 74dvh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding:
+    80px
+    max(30px, env(safe-area-inset-right))
+    max(80px, env(safe-area-inset-bottom))
+    max(30px, env(safe-area-inset-left));
+
+  background:
+    linear-gradient(
+      to bottom,
+      #4a3625 0%,
+      #2d2319 100%
+    );
+
+  color: #f5ecd6;
+}
+
+.end p {
+  margin: 0 0 66px;
+
+  font-size: clamp(36px, 6vw, 66px);
+}
+
+[data-contact] {
+  appearance: none;
+
+  width: fit-content;
+
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+  color: #dccc95;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+[data-contact]:hover {
+  color: #fff2c6;
+}
+
+
+/* mobile */
+
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+
+  .opening {
+    min-height: 84dvh;
+
+    display: block;
+
+    padding-left: max(22px, env(safe-area-inset-left));
+    padding-right: max(22px, env(safe-area-inset-right));
+  }
+
+  .opening h1 {
+    margin-top: 18dvh;
+
+    font-size: clamp(62px, 23vw, 105px);
+  }
+
+  .opening-line {
+    margin-top: 78px;
+  }
+
+  .hero {
+    height: 74dvh;
+  }
+
+  .stop,
+  .stop:nth-of-type(even),
+  .vines {
+    grid-template-columns: 1fr;
+
+    padding:
+      88px
+      20px;
+  }
+
+  .stop figure {
+    height: 58dvh;
+  }
+
+  .vines figure,
+  .vines .words {
+    order: initial;
+  }
+
+  .grass,
+  .horses {
+    padding:
+      82px
+      20px;
+  }
+
+  .grass figure,
+  .horses figure {
+    height: 60dvh;
+  }
+
+  .full-photo {
+    min-height: 88dvh;
+  }
+
+  .full-photo .words {
+    margin-left: 22px;
+    padding-top: 70px;
+  }
+
+  .last-drive {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .last-drive figure {
+    min-height: 68dvh;
+  }
+
+  .last-words {
+    padding: 58px 22px 80px;
+  }
+
+  .end {
+    min-height: 80dvh;
+  }
 }
